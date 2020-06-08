@@ -2,11 +2,8 @@ package com.razarana.dreambrokerchallenge.Service;
 
 import com.razarana.dreambrokerchallenge.Model.AnalysisResult;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class AnalysisService {
@@ -50,12 +47,12 @@ public class AnalysisService {
 
     }
 
-    private Map analyzeCharCount(String data){
+    private Set analyzeCharCount(String data){
 
-        Map<Character,Integer> charFreq = new HashMap<Character,Integer>();
+        TreeMap<Character,Integer> charFreq = new TreeMap<Character,Integer>();
         if (data != null) {
             for (Character c : data.toCharArray()) {
-                if (c!=' ') {
+                if ((c>65&&c<91) || (c>96 && c<123)) {
                     Integer count = charFreq.get(c);
                     int newCount = (count==null ? 1 : count+1);
                     charFreq.put(c, newCount);
@@ -63,8 +60,9 @@ public class AnalysisService {
             }
         }
 
+        return charFreq.entrySet();
 
-        return charFreq;
+
 
     }
 }

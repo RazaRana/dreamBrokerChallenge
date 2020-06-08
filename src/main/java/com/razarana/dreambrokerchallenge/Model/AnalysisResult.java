@@ -1,7 +1,8 @@
 package com.razarana.dreambrokerchallenge.Model;
 
+
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Set;
 
 
 public class AnalysisResult {
@@ -10,7 +11,7 @@ public class AnalysisResult {
 
     HashMap <String,Integer> textLength;
     int wordCount;
-    Map characterCount;
+    Set characterCount;
 
     public AnalysisResult(){
         textLength=new HashMap<>();
@@ -35,11 +36,11 @@ public class AnalysisResult {
         this.wordCount = wordCount;
     }
 
-    public Map getCharacterCount() {
+    public Set getCharacterCount() {
         return characterCount;
     }
 
-    public void setCharacterCount(Map characterCount) {
+    public void setCharacterCount(Set characterCount) {
         this.characterCount = characterCount;
     }
 
