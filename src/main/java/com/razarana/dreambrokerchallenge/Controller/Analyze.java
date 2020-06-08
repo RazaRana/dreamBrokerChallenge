@@ -1,14 +1,19 @@
 package com.razarana.dreambrokerchallenge.Controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Analyze {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String welcome() {
+    public String welcomeMessage() {
         return "welcome";
+    }
+
+    @PostMapping("/analyze")
+    public String analysisString(@RequestBody String data) {
+        return "";
     }
 }
