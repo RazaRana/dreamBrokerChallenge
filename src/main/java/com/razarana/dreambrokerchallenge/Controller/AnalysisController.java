@@ -23,8 +23,10 @@ public class AnalysisController {
     public AnalysisResult analysisString(@RequestBody String text) {
 
         //to fix this curl command problem of double quotes
-        text=text.replace("'{text:","");
-        text=text.replace("}'","");
+        text=text.replace("text","");
+        text=text.replace("'","");
+        text=text.replace("{","");
+        text=text.replace("}","");
 
 
         return analysisService.analyzeData(text);
