@@ -3,28 +3,29 @@ package com.razarana.dreambrokerchallenge.Model;
 
 import java.util.HashMap;
 import java.util.Set;
+import java.util.TreeMap;
 
 
 public class AnalysisResult {
 
 
 
-    HashMap <String,Integer> textLength;
+    TreeMap <String,Integer> textLength;
     int wordCount;
     Set characterCount;
 
     public AnalysisResult(){
-        textLength=new HashMap<>();
+        textLength=new TreeMap<>();
         wordCount=0;
 
     }
 
 
-    public HashMap<String, Integer> getTextLength() {
+    public TreeMap<String, Integer> getTextLength() {
         return textLength;
     }
 
-    public void setTextLength(HashMap<String, Integer> textLength) {
+    public void setTextLength(TreeMap<String, Integer> textLength) {
         this.textLength = textLength;
     }
 

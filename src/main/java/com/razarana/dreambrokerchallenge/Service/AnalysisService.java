@@ -26,8 +26,8 @@ public class AnalysisService {
         return result;
     }
 
-    private HashMap<String,Integer> analyzeTextLength(String data){
-        HashMap<String,Integer> lengths=new HashMap<String,Integer>();
+    private TreeMap<String,Integer> analyzeTextLength(String data){
+        TreeMap<String,Integer> lengths=new TreeMap<String,Integer>();
 
         //length with spaces
         lengths.put("withSpaces",data.length());
