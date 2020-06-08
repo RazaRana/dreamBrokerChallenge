@@ -1,5 +1,6 @@
 package com.razarana.dreambrokerchallenge.Controller;
 
+import com.razarana.dreambrokerchallenge.Model.AnalysisResult;
 import com.razarana.dreambrokerchallenge.Service.AnalysisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class Analyze {
+public class AnalysisController {
 
     @Autowired
     AnalysisService analysisService;
@@ -18,7 +19,7 @@ public class Analyze {
     }
 
     @PostMapping("/analyze")
-    public String analysisString(@RequestBody String data) {
+    public AnalysisResult analysisString(@RequestBody String data) {
         return analysisService.analyzeData(data);
     }
 }
