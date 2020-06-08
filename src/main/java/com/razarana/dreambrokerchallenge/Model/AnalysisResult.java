@@ -10,7 +10,7 @@ public class AnalysisResult {
 
     HashMap <String,Integer> textLength;
     int wordCount;
-    HashMap characterCount[];
+    Map characterCount;
 
     public AnalysisResult(){
         textLength=new HashMap<>();
@@ -35,11 +35,11 @@ public class AnalysisResult {
         this.wordCount = wordCount;
     }
 
-    public HashMap[] getCharacterCount() {
+    public Map getCharacterCount() {
         return characterCount;
     }
 
-    public void setCharacterCount(HashMap[] characterCount) {
+    public void setCharacterCount(Map characterCount) {
         this.characterCount = characterCount;
     }
 

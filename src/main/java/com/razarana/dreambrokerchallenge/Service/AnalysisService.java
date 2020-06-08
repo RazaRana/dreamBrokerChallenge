@@ -6,6 +6,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class AnalysisService {
@@ -14,10 +15,14 @@ public class AnalysisService {
     public AnalysisResult analyzeData(String data){
         AnalysisResult result= new AnalysisResult();
 
+
         //add text length with and without spaces to the result
         result.setTextLength(analyzeTextLength(data));
         //add number of words in the data to the result
         result.setWordCount(analyzeWordCount(data));
+
+        //count char freq
+        result.setCharacterCount(analyzeCharCount(data));
 
 
 
@@ -45,11 +50,19 @@ public class AnalysisService {
 
     }
 
-    private HashMap[] analyzeCharCount(String data, int charCount){
-        ArrayList<HashMap>list=new ArrayList<HashMap>();
+    private Map analyzeCharCount(String data){
+
+        Map<Character,Integer> charFreq = new HashMap<Character,Integer>();
+        if (data != null) {
+            for (Character c : data.toCharArray()) {
+                Integer count = charFreq.get(c);
+                int newCount = (count==null ? 1 : count+1);
+                charFreq.put(c, newCount);
+            }
+        }
 
 
-        return list.toArray(new HashMap[0]);
+        return charFreq;
 
     }
 }
