@@ -55,9 +55,11 @@ public class AnalysisService {
         Map<Character,Integer> charFreq = new HashMap<Character,Integer>();
         if (data != null) {
             for (Character c : data.toCharArray()) {
-                Integer count = charFreq.get(c);
-                int newCount = (count==null ? 1 : count+1);
-                charFreq.put(c, newCount);
+                if (c!=' ') {
+                    Integer count = charFreq.get(c);
+                    int newCount = (count==null ? 1 : count+1);
+                    charFreq.put(c, newCount);
+                }
             }
         }
 
